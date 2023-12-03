@@ -1,0 +1,37 @@
+https://api.render.com/deploy/srv-clkim1eaov6s73eg3aqg?key=9-MDX4eZQd8
+
+
+Tutorial Login con React y TailwindCSS | 2022:
+https://www.youtube.com/watch?v=5I74KwYDxvQ
+
+
+Para instalar tailwind en proyecto de node:
+
+https://stackoverflow.com/questions/73136479/vite-postcss-module-error-when-building-app-in-svelte
+
+npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+
+npx tailwindcss init -p
+
+npm i
+
+Se cambia la extencion del archivo por Form.jsx
+
+Se cambia tailwind.config.js
+module.exports ={
+  content: [
+            // './src/**/*/.{js,jsx,ts,tsx,html}',
+            './src/**/*.jsx',
+            './src/**/*.js',
+            './src/**/*.html',
+            './src/**/*.tsx',
+            './src/**/*.ts',
+            // './components/**/*.{html,js}',
+            // './app/**/*.{js,ts,jsx,tsx}',
+          ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+
