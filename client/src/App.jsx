@@ -2,25 +2,21 @@ import { useState } from 'react'
 // import './App.css'
 import './index.css';
 import Form from "./components/Form";
+import {Home} from './components/Home';
 
 const URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
 
 function App() {
-  const [result, setResult] = useState('')
+  const [user, setUser] = useState([])
 
   return (
       <div className="flex w-full h-screen">        
         <div className='w-full flex items-center justify-center lg:w-1/2'>
-          <Form />
-          {/* <button onClick={async () =>{
-          const res = await fetch(`${URL}/ping`)
-          const data = await res.json()
-          console.log(data);
-          setResult(data);
-          }}>
-            Users
-          </button>
-          <pre>{JSON.stringify(result, null, 2)}</pre> */}
+          {
+            !user.length > 0
+            ? <Form setUser= {setUser}/>
+            : <Home user={user} setUser={setUser}/>
+          }          
         </div>
 
         <div className="hidden relative lg:flex h-full w-1/2 items-center justify-center bg-gray-200">

@@ -3,9 +3,23 @@ import { useState } from 'react'
 
 const URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
 
-export default function Form() {
+export default function Form( {setUser} ) {
 
-    const [result, setResult] = useState('')
+    const [result, setResult] = useState('');
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState(false);
+
+    function valida(){
+        if(email === "" || password ===""){
+            setError(true)
+            return
+        } else{
+            setUser([email]);
+        }
+        setError(false)
+        setUser([email])
+    }
 
     return (
         <div className='bg-white px-10 py-20 rounded-3xl border-2 border-gray-100'>
@@ -16,6 +30,8 @@ export default function Form() {
                     <label className='text-lg font-semibold'>Email</label>
                     <input 
                         className='w-full border-2 border-gray-100 rounded-xl p-4 mt-1 bg-transparent'
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
                         placeholder='Enter your email'
                     />
                 </div>
@@ -23,10 +39,13 @@ export default function Form() {
                     <label className='text-lg font-semibold'>Password</label>
                     <input 
                         className='w-full border-2 border-gray-100 rounded-xl p-4 mt-1 bg-transparent'
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
                         placeholder='Enter your password'
                         type='password'
                     />
                 </div>
+                {error && <p className='font-semibold text-red-500'>Todos los campos son obligatorios.</p>}
                 <div className='mt-8 flex justify-between items-center'>
                     <div>
                         <input 
@@ -39,11 +58,13 @@ export default function Form() {
                 </div>
                 <div className='mt-8 flex flex-col gap-y-4'>
                     <button className='active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all py-3 rounded-xl bg-green-500 text-white text-lg font-bold'
-                        onClick={async () =>{
+                        onClick={ async () =>{
                             const res = await fetch(`${URL}/ping`)
                             const data = await res.json()
                             console.log(data);
                             setResult(data);
+                            valida();
+                            
                             }}
                     >
                         Sign in
