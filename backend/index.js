@@ -18,7 +18,7 @@ app.use(cors({
 }))
 app.get("/ping", async (req, res) => {
 
-    const result = await pool.query('SELECT NOW()')
+    const result = await pool.query('SELECT * FROM TASK')
     
 res.send({
     pong: result.rows[0].now,
