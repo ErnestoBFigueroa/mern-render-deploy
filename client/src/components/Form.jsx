@@ -59,11 +59,13 @@ export default function Form( {setUser} ) {
                 <div className='mt-8 flex flex-col gap-y-4'>
                     <button className='active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all py-3 rounded-xl bg-green-500 text-white text-lg font-bold'
                         onClick={ async () =>{
-                            const res = await fetch(`${URL}/ping`)
+                            
+                            valida();
+                            const res = await fetch(`${URL}/projects`)
                             const data = await res.json()
                             console.log(data);
                             setResult(data);
-                            valida();
+                            
                             
                             }}
                     >
