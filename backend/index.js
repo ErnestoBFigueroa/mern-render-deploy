@@ -27,7 +27,9 @@ app.use(
   })
 );
 app.get("/ping", async (req, res) => {
-  const result = await pool.query("SELECT * from projects");
+  const result = await pool.query(
+    "SELECT * FROM public.projects ORDER BY id ASC "
+  );
 
   res.send({
     pong: result.rows[0].now,
