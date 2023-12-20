@@ -32,7 +32,7 @@ app.get("/ping", async (req, res) => {
   );
 
   res.send({
-    pong: result.rows[0].now,
+    pong: result.rows[0].name,
   });
 });
 
