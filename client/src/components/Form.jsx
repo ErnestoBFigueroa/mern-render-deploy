@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react'
+import { Link } from '../Link.jsx'
 
 const URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
 
@@ -80,6 +81,9 @@ export default function Form( {setUser} ) {
                 <div className='mt-8 flex justify-center items-center'>
                     <p className='font-semibold text-base'>Don't have an account?</p>
                     <button className='text-violet-500 text-base font-medium ml-2'>Sign up</button>
+                </div>
+                <div className='mt-8 flex justify-center items-center'>
+                <Link className='text-violet-500 text-base font-medium ml-2' to='/'>Ir a Home</Link>
                 </div>
             </div>
         </div>

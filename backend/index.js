@@ -12,6 +12,7 @@ import {
 } from "./config.js";
 
 const app = express();
+const whiteList = [FRONTEND_URL];
 
 const pool = new pg.Pool({
   host: DB_HOST,
@@ -19,23 +20,22 @@ const pool = new pg.Pool({
   user: DB_USER,
   password: DB_PASSWORD,
   port: DB_PORT,
+  //ssl: true,
 });
 
 app.use(
   cors({
-    origin: FRONTEND_URL,
+    origin: whiteList,
   })
 );
-app.get("/ping", async (req, res) => {
-  const result = await pool.query(
-    "SELECT * FROM public.projects ORDER BY id ASC "
-  );
+app.get("/projects", async (req, res) => {
+  const result = await pool.query("SELECT NOW()");
 
   res.send({
-    pong: result.rows[0].name,
+    pong: result.rows[0].now,
   });
 });
 
 app.listen(PORT, () => {
-  console.log("server started on port 3000");
+  // console.log("server started on port 3000");
 });
