@@ -13,8 +13,10 @@ export default function HomePage () {
                 <h1 className='text-6xl font-semibold mt-4'>JAEB</h1>
                 <p className='font-semibold text-2xl text-green-500 mt-4 pb-5'>Web Developments</p>
             </div>
-
-            <section className="w-[90%] max-w-lg mx-auto bg-white shadow-2xl md:flex md:rounded-2xl pt-10 pb-6">
+            {/* https://www.youtube.com/watch?v=Pxs2WKdvBRU */}
+            {/* Como crear un PROYECTO desde CERO con Tailwind. (Responsive) min 22:00*/}
+            <section className="w-[90%] max-w-lg mx-auto bg-white shadow-2xl md:flex md:rounded-2xl
+            md:max-w-lg pt-10 pb-6">
                 {/* <div className="flex w-full h-screen">         */}
                 {/* <div className='w-full flex items-center justify-center'> */}
                 
@@ -24,7 +26,7 @@ export default function HomePage () {
                         */}
                 
                 {/* <article className='bg-gradient-to-b from-light-slate-blue to-light-royal-blue rounded-b-2xl p-10 text-white text-center'> */}
-                <article className='rounded-b-2xl pl-10 text-white text-center'>
+                <article className='rounded-b-2xl pl-10 text-white text-center md:w-1/2 md:grid md content-center'>
                     <div className='flex items-center'>            
                         <BuildingOffice2Icon className='w-8 h-8 text-black'/>            
                         <p className='font-semibold text-3xl text-purple-500 ml-4 underline underline-offset-8'>
