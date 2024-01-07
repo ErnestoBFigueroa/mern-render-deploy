@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom'
 // import './App.css'
-import './index.css';
+import './css/index.css';
 import Form from "./components/Form";
-import HomePage from './pages/home.jsx';
+import HomePage from './pages/home.jsx'; // Instalacion de Material UI https://www.youtube.com/watch?v=_zGL_MU29zs&t=5630s
 import { Router } from './Router.jsx'
+import Register from "./components/Register.jsx"
 
 const appRoutes = [
   {
@@ -14,6 +15,10 @@ const appRoutes = [
   {
     path: '/login',
     Component: Form
+  },
+  {
+    path: '/register',
+    Component: Register
   }
 ]
 
@@ -26,13 +31,13 @@ function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname)
 
   return (
-    <div className="flex w-full h-screen">        
-      <div className='w-full flex items-center justify-center '>
+    
+      
         <main>
           <Router routes = {appRoutes} />
         </main>
-      </div>  
-    </div>  
+      
+    
       
       //     {currentPath ==='/' && <HomePage/>}          
       //     {currentPath === '/login' && <Form/> }

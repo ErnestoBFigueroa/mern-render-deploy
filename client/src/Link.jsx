@@ -17,6 +17,7 @@ const handleClick = (event) => {
     if(isMainEvent && isManageableEvent && !isModifiedEvent){
         event.preventDefault()
         navigate(to)
+        
     }
 }
 
