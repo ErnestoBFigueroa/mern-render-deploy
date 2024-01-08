@@ -35,7 +35,7 @@ export default function HomePage () {
                     </div>            
                     <div className='mt-4 flex items-center pb-4'>
                         <Link className='active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all py-2 rounded-xl bg-purple-500 text-white text-lg font-bold p-3 mr-2'
-                        to='/login'>Conoce más</Link>            
+                        to='/Adincoha'>Conoce más</Link>            
                     </div>            
                     
                     <div className='flex items-center'>

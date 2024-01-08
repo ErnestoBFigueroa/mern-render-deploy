@@ -6,6 +6,7 @@ import Form from "./components/Form";
 import HomePage from './pages/home.jsx'; // Instalacion de Material UI https://www.youtube.com/watch?v=_zGL_MU29zs&t=5630s
 import { Router } from './Router.jsx'
 import Register from "./components/Register.jsx"
+import Adincoha from './components/AboutAdincoha.jsx';
 
 const appRoutes = [
   {
@@ -19,6 +20,11 @@ const appRoutes = [
   {
     path: '/register',
     Component: Register
+  }
+  ,
+  {
+    path: '/Adincoha',
+    Component: Adincoha
   }
 ]
 
