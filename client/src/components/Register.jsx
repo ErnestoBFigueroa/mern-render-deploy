@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState } from 'react'
 import { Link } from '../Link.jsx'
-import { BuildingOffice2Icon, BuildingStorefrontIcon, AcademicCapIcon } from '@heroicons/react/24/solid'
+import { HomeIcon} from '@heroicons/react/24/solid'
 
 const URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
 
@@ -51,11 +51,11 @@ const URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
        }
 
     return (
-        <div className='bg-white px-10 py-20 rounded-3xl border-2 border-gray-100'>
-            
+        // <div className='bg-white px-10 py-20 rounded-3xl border-2 border-gray-100'>
+        <div className='w-[90%] max-w-lg mx-auto bg-white px-10 py-1 rounded-3xl border-2 border-gray-100'>
             <h1 className='text-5xl font-semibold text-gray-500'>Registro</h1>
                         
-            <p className='font-medium text-lg text-gray-500 mt-4'>Por favor ingresa tu Email y contraseña.</p>
+            <p className='font-medium text-lg text-gray-500 mt-4'>Por favor ingresa tu nombre de usuario, correo y contraseña.</p>
             <div className='mt-8'>
             <div>
                     <label className='text-lg font-semibold'>Usuario</label>
@@ -161,6 +161,7 @@ const URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
                     <button className='text-violet-500 text-base font-medium ml-2'>Sign up</button>
                 </div>
                 <div className='mt-4 flex justify-center items-center'>
+                <HomeIcon className='w-6 h-6 text-black'/>
                 <Link className='text-violet-500 text-base font-medium ml-2' to='/'>Ir a Home</Link>
                 </div>
             </div>
